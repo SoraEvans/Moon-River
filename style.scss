@@ -49,7 +49,7 @@ body {
   justify-content: space-between;
   position: relative;
 
-  div:first-child {
+  .header-logo {
     cursor: pointer;
   }
 }
@@ -92,28 +92,17 @@ body {
   &:hover {
     stroke: $gold-on-black;
 
-    & ~ span {
+    span {
+      color: $gold-on-black;
+    }
+  }
+
+  &:active {
+    span {
       color: $gold-on-white;
     }
   }
 }
-
-//.burger-menu {
-//  margin-left: 80px;
-//  margin-top: 3px;
-//  stroke: white;
-//  cursor: pointer;
-//
-//  svg {
-//    &:hover {
-//      stroke: $gold-on-black;
-//    }
-//
-//    &:active {
-//      stroke: $gold-on-white;
-//    }
-//  }
-//}
 
 .sidebar {
   position: absolute;
@@ -827,7 +816,12 @@ footer {
     height: 1011px;
     background: #272727;
     position: absolute;
-    transition: width 1s ease-out;
+    transition: width 0.7s ease-out;
+
+    .menu-content {
+      transition: opacity 0.4s ease-out;
+      opacity: 1;
+    }
 
     &.active {
       width: 100%;
@@ -868,6 +862,14 @@ footer {
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.anim-opacity {
+  opacity: 0 !important;
+}
+
 .menu-toggle {
   top: 64px;
   z-index: 2;
@@ -878,6 +880,18 @@ footer {
   cursor: pointer;
   border-radius: 50%;
   position: absolute;
+
+  &:hover {
+    &::before, &::after {
+      background: $gold-on-black;
+    }
+  }
+
+  &:active {
+    &::before, &::after {
+      background: $gold-on-white;
+    }
+  }
 
   span {
     height: 2px;
@@ -911,6 +925,19 @@ footer {
   }
 
   &.menu-open {
+
+    &:hover {
+      &::before, &::after {
+        background: $gold-on-black;
+      }
+    }
+
+    &:active {
+      &::before, &::after {
+        background: $gold-on-white;
+      }
+    }
+
     span {
       background: rgba(255, 255, 255, 0);
     }
@@ -948,7 +975,7 @@ footer {
       }
 
       &::before, &::after {
-        width: 18px;
+        width: 18.6px;
       }
     }
   }
@@ -993,7 +1020,20 @@ footer {
     line-height: 23px;
     letter-spacing: 0.06em;
 
-    span {
+    &:hover {
+      svg {
+        stroke:$gold-on-black;
+      }
+    }
+
+    &:active {
+      svg {
+        stroke:$gold-on-white;
+      }
+    }
+
+    svg {
+      stroke: white;
       margin-left: 23px;
     }
   }
@@ -1035,6 +1075,7 @@ footer {
     line-height: 21px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    cursor: default;
   }
 
   p {
@@ -1044,6 +1085,7 @@ footer {
     font-size: 18px;
     line-height: 23px;
     letter-spacing: 0.06em;
+    cursor: pointer;
   }
 
   .show-all-brands {
@@ -1081,5 +1123,7 @@ footer {
     }
   }
 }
+
+
 
 

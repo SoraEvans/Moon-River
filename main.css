@@ -37,7 +37,7 @@ body {
   justify-content: space-between;
   position: relative;
 }
-.header div:first-child {
+.header .header-logo {
   cursor: pointer;
 }
 
@@ -56,7 +56,7 @@ body {
   transition: 0.15s ease;
 }
 .header-icon svg:active {
-  stroke: #E2B67A;
+  stroke: #d3a25f;
 }
 .header-icon:nth-child(3) {
   align-self: flex-end;
@@ -73,8 +73,11 @@ body {
 .cart-icon:hover {
   stroke: #EFC58B;
 }
-.cart-icon:hover ~ span {
-  color: #E2B67A;
+.cart-icon:hover span {
+  color: #EFC58B;
+}
+.cart-icon:active span {
+  color: #d3a25f;
 }
 
 .sidebar {
@@ -200,7 +203,7 @@ body {
 }
 .collection-link:hover {
   transition: 0.15s ease;
-  color: #E2B67A;
+  color: #d3a25f;
 }
 .collection-link:active {
   color: #EFC58B;
@@ -319,7 +322,7 @@ body {
 }
 .form svg:hover {
   transition: 0.15s ease;
-  stroke: #E2B67A;
+  stroke: #d3a25f;
 }
 .form input {
   background: transparent;
@@ -389,7 +392,7 @@ body {
   font-weight: 400;
   font-style: italic;
   font-size: 18px;
-  color: #E2B67A;
+  color: #d3a25f;
   letter-spacing: 0.03em;
 }
 .product figcaption p:nth-child(2) {
@@ -477,38 +480,45 @@ body {
   width: max-content;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .carousel-inner .carousel-item > div {
-    display: block !important;
+    display: none;
   }
 
   .carousel-inner .carousel-item > div:first-child {
-    display: block !important;
+    display: block;
   }
 }
 .carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-start,
 .carousel-inner .carousel-item-next,
 .carousel-inner .carousel-item-prev {
-  display: flex !important;
+  display: flex;
 }
 
-/* medium and up screens */
 @media (min-width: 768px) {
-  .carousel-inner .carousel-item-end.active,
-.carousel-inner .carousel-item-next {
+  .carousel-inner .carousel-item-right.active,
+.carousel-inner .carousel-item-next,
+.carousel-item-next:not(.carousel-item-start) {
     transform: translateX(25%) !important;
   }
 
-  .carousel-inner .carousel-item-start.active,
-.carousel-inner .carousel-item-prev {
+  .carousel-inner .carousel-item-left.active,
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start,
+.carousel-item-prev:not(.carousel-item-end) {
+    transform: translateX(-25%) !important;
+  }
+
+  .carousel-item-next.carousel-item-start, .active.carousel-item-end {
+    transform: translateX(0) !important;
+  }
+
+  .carousel-inner .carousel-item-prev,
+.carousel-item-prev:not(.carousel-item-end) {
     transform: translateX(-25%) !important;
   }
 }
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start {
-  transform: translateX(0) !important;
-}
-
 .carousel-indicator-custom {
   height: 100%;
   align-items: center;
@@ -548,7 +558,7 @@ body {
   transition: 0.15s ease !important;
 }
 .social-icons > div:first-child svg:first-child:active {
-  fill: #E2B67A;
+  fill: #d3a25f;
 }
 
 .subscription {
@@ -591,7 +601,7 @@ body {
 }
 .subscription-block-form svg:hover {
   transition: 0.15s ease;
-  stroke: #E2B67A;
+  stroke: #d3a25f;
 }
 
 footer {
@@ -618,7 +628,7 @@ footer a:hover {
   color: #EFC58B !important;
 }
 footer a:active {
-  color: #E2B67A !important;
+  color: #d3a25f !important;
 }
 footer .form {
   width: 280px;
@@ -665,7 +675,7 @@ footer .form input::placeholder {
   fill: #EFC58B;
 }
 .footer-phone svg:active {
-  fill: #E2B67A;
+  fill: #d3a25f;
 }
 
 .footer-subscription {
@@ -708,7 +718,11 @@ footer .form input::placeholder {
   height: 1011px;
   background: #272727;
   position: absolute;
-  transition: width 1s ease-out;
+  transition: width 0.7s ease-out;
+}
+.burger-menu .menu .menu-content {
+  transition: opacity 0.4s ease-out;
+  opacity: 1;
 }
 .burger-menu .menu.active {
   width: 100%;
@@ -742,6 +756,14 @@ footer .form input::placeholder {
   border-bottom: 1.8px solid white;
 }
 
+.hidden {
+  display: none;
+}
+
+.anim-opacity {
+  opacity: 0 !important;
+}
+
 .menu-toggle {
   top: 64px;
   z-index: 2;
@@ -752,6 +774,12 @@ footer .form input::placeholder {
   cursor: pointer;
   border-radius: 50%;
   position: absolute;
+}
+.menu-toggle:hover::before, .menu-toggle:hover::after {
+  background: #EFC58B;
+}
+.menu-toggle:active::before, .menu-toggle:active::after {
+  background: #d3a25f;
 }
 .menu-toggle span {
   height: 2px;
@@ -779,6 +807,12 @@ footer .form input::placeholder {
 }
 .menu-toggle::after {
   bottom: -1.7px;
+}
+.menu-toggle.menu-open:hover::before, .menu-toggle.menu-open:hover::after {
+  background: #EFC58B;
+}
+.menu-toggle.menu-open:active::before, .menu-toggle.menu-open:active::after {
+  background: #d3a25f;
 }
 .menu-toggle.menu-open span {
   background: rgba(255, 255, 255, 0);
@@ -809,7 +843,7 @@ footer .form input::placeholder {
   transform: rotate(-35deg);
 }
 .menu-toggle.menu-open:hover::before, .menu-toggle.menu-open:hover::after, .menu-toggle.menu-open:focus::before, .menu-toggle.menu-open:focus::after, .menu-toggle.menu-open:active::before, .menu-toggle.menu-open:active::after {
-  width: 18px;
+  width: 18.6px;
 }
 .menu-toggle:hover span, .menu-toggle:focus span, .menu-toggle:active span {
   background: rgba(255, 255, 255, 0);
@@ -845,7 +879,14 @@ footer .form input::placeholder {
   line-height: 23px;
   letter-spacing: 0.06em;
 }
-.footer-pic a span {
+.footer-pic a:hover svg {
+  stroke: #EFC58B;
+}
+.footer-pic a:active svg {
+  stroke: #d3a25f;
+}
+.footer-pic a svg {
+  stroke: white;
   margin-left: 23px;
 }
 
@@ -880,6 +921,7 @@ footer .form input::placeholder {
   line-height: 21px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  cursor: default;
 }
 .tab-content-column p {
   margin-bottom: 15px;
@@ -888,6 +930,7 @@ footer .form input::placeholder {
   font-size: 18px;
   line-height: 23px;
   letter-spacing: 0.06em;
+  cursor: pointer;
 }
 .tab-content-column .show-all-brands {
   font-family: "Segoe UI Light";

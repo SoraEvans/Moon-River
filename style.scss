@@ -1,0 +1,1085 @@
+@import "constants";
+
+@font-face {
+  font-family: 'Forum';
+  src: url('./assets/fonts/Forum-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura PT Medium';
+  src: url('./assets/fonts/futura_pt_medium.eot'); /* IE 9 Compatibility Mode */
+  src: url('./assets/fonts/futura_pt_medium.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+  url('./assets/fonts/futura_pt_medium.woff2') format('woff2'), /* Super Modern Browsers */
+  url('./assets/fonts/futura_pt_medium.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+  url('./assets/fonts/futura_pt_medium.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('./assets/fonts/futura_pt_medium.svg#futura_pt_medium') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Futura PT Light';
+  src: url('./assets/fonts/futura_pt_light.eot'); /* IE 9 Compatibility Mode */
+  src: url('./assets/fonts/futura_pt_light.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+  url('./assets/fonts/futura_pt_light.woff2') format('woff2'), /* Super Modern Browsers */
+  url('./assets/fonts/futura_pt_light.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+  url('./assets/fonts/futura_pt_light.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('./assets/fonts/futura_pt_light.svg#futura_pt_light') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('./assets/fonts/segoe_ui.eot'); /* IE 9 Compatibility Mode */
+  src: url('./assets/fonts/segoe_ui.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+  url('./assets/fonts/segoe_ui.woff2') format('woff2'), /* Super Modern Browsers */
+  url('./assets/fonts/segoe_ui.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+  url('./assets/fonts/segoe_ui.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('./assets/fonts/segoe_ui.svg#segoe_ui') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+body {
+  max-width: 1440px;
+  margin: auto !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.header {
+  padding: 58px 162px;
+  justify-content: space-between;
+  position: relative;
+
+  div:first-child {
+    cursor: pointer;
+  }
+}
+
+.header-icons {
+  align-content: center;
+  margin-right: 86px;
+}
+
+.header-icon {
+  cursor: pointer;
+  margin: 0 20px;
+  stroke: white;
+
+  svg {
+    &:hover {
+      stroke: $gold-on-black;
+      transition: .15s ease;
+    }
+
+    &:active {
+      stroke: $gold-on-white;
+    }
+  }
+
+  &:nth-child(3) {
+    align-self: flex-end;
+  }
+}
+
+.cart-count {
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+  font-family: "Futura PT Light";
+  font-weight: 300;
+}
+
+.cart-icon {
+  &:hover {
+    stroke: $gold-on-black;
+
+    & ~ span {
+      color: $gold-on-white;
+    }
+  }
+}
+
+//.burger-menu {
+//  margin-left: 80px;
+//  margin-top: 3px;
+//  stroke: white;
+//  cursor: pointer;
+//
+//  svg {
+//    &:hover {
+//      stroke: $gold-on-black;
+//    }
+//
+//    &:active {
+//      stroke: $gold-on-white;
+//    }
+//  }
+//}
+
+.sidebar {
+  position: absolute;
+  height: 1059px;
+  max-width: 562px;
+  width: 100%;
+  right: 0;
+  top: -194px;
+  z-index: -1;
+  background-color: $main-black-color;
+}
+
+.home-page {
+  position: relative;
+  height: 864px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 162px;
+}
+
+.home-page-main-block {
+  margin-top: 268px;
+}
+
+.home-page-title {
+  font-size: 64px;
+  font-family: Forum;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  color: $main-black-color;
+  cursor: default;
+}
+
+.side-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 44px;
+
+  aside {
+    text-align: right;
+
+    p {
+      margin: 0 0 9px;
+    }
+
+    h2 {
+      margin: 0 0 9px;
+    }
+  }
+}
+
+.product-name {
+  color: white;
+  font-family: "Futura PT Light";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+
+}
+
+.product-desc {
+  color: $gray-on-black;
+  font-family: "Futura PT Light";
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.cost {
+  color: $gold-on-black;
+  font-family: "Segoe UI Light";
+  font-weight: 300;
+  font-style: italic;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  line-height: 24px;
+}
+
+.language {
+  align-items: end;
+  font-family: "Futura PT Light";
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: $main-black-color;
+
+  p:first-child {
+    cursor: pointer;
+  }
+
+  span {
+    color: $gray-C4;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &:hover {
+      transition: .15s ease;
+      color: $gray-on-white;
+    }
+
+    &:active {
+      color: $main-black-color;
+    }
+  }
+}
+
+.line-decor {
+  height: 1px;
+  width: 130px;
+  margin-right: 38px;
+  background-color: $main-black-color;
+}
+
+.show-collection {
+  align-items: center;
+  margin-left: 130px;
+  color: $main-black-color;
+}
+
+.collection-link {
+  font-size: 18px;
+  margin: 0 94px 5px 0;
+  font-family: "Segoe UI Light";
+  font-weight: 300;
+  font-style: italic;
+  cursor: pointer;
+
+  &:hover {
+    transition: .15s ease;
+    color: $gold-on-white;
+  }
+
+  &:active {
+    color: $gold-on-black;
+  }
+}
+
+.for-man {
+  background: url("./assets/images/for_man_bg.png") 0 0 no-repeat;
+}
+
+.for-woman {
+  background: url("./assets/images/for_woman_bg.png") 0 0 no-repeat;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.category-block {
+  max-width: 710px;
+  width: 100%;
+  height: 587px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    width: 100%;
+    height: 100%;
+    background-color: #272727;
+    opacity: 0.4;
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  p {
+    font-family: "Futura PT Light";
+    font-size: 24px;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+
+  h2 {
+    font-family: Forum;
+    font-size: 64px;
+    font-weight: 300;
+    margin: 0 0 23px;
+    letter-spacing: 0.03em;
+  }
+
+  & > div {
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.category-line-decor {
+  max-width: 130px;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.location {
+  height: 604px;
+}
+
+.location-block {
+  flex: 1;
+  background: #272727;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+
+}
+
+.location-block-form {
+  max-width: 386px;
+  width: 100%;
+
+  & > h2 {
+    margin: 0 0 16px;
+    font-family: Forum;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    white-space: pre-line;
+    letter-spacing: 0.03em;
+  }
+
+  p {
+    margin: 0 0 60px;
+    font-family: "Futura PT Light";
+    font-size: 18px;
+  }
+}
+
+.form {
+  border-bottom: 1.8px solid white;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  align-items: end;
+
+  svg {
+    stroke: white;
+
+    &:hover {
+      transition: .15s ease;
+      stroke: $gold-on-white;
+    }
+  }
+
+  input {
+    background: transparent;
+    border: none;
+    font-family: "Futura PT Light";
+    font-size: 18px;
+    color: $main-black-color;
+    width: 100%;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .input-black {
+    color: white;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    height: fit-content;
+  }
+}
+
+.card-img {
+  margin-right: 25px;
+  width: 385px;
+  height: 385px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+.card {
+  background: $main-black-color !important;
+  border: none !important;
+}
+
+.assortment {
+  justify-content: space-between;
+  height: 860px;
+  padding: 20px 0;
+
+  figure {
+    margin: 0;
+    cursor: pointer;
+
+    img {
+      justify-self: center;
+      align-self: end;
+    }
+
+    figcaption {
+      padding: 67px 30px 20px;
+    }
+  }
+}
+
+.product {
+  display: grid;
+  height: 400px;
+  max-width: 400px;
+  width: 100%;
+  background-color: #EDEDED;
+  grid-template-rows: 2fr;
+  cursor: pointer;
+
+  figcaption {
+    p {
+      margin: 0;
+      font-family: "Segoe UI Light";
+      font-weight: 400;
+      font-style: italic;
+      font-size: 18px;
+      color: $gold-on-white;
+      letter-spacing: 0.03em;
+
+      &:nth-child(2) {
+        margin: 9px 0;
+        font-family: "Futura PT Light";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        color: $gray-text;
+
+      }
+    }
+
+    h3 {
+      margin: 0;
+      color: $main-black-color;
+      font-family: "Futura PT Light";
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.product-big {
+  position: relative;
+  height: fit-content;
+  max-width: 600px;
+  width: 100%;
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+
+    p {
+      margin: 0;
+      font-family: "Segoe UI Light";
+      font-style: italic;
+      font-size: 18px;
+      color: $gold-on-black;
+      letter-spacing: 0.03em;
+
+      &:nth-child(2) {
+        margin: 9px 0;
+        font-family: "Futura PT Light";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        color: #E7E7E7;
+      }
+    }
+
+    h3 {
+      margin: 0;
+      color: white;
+      font-family: "Futura PT Light";
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.products-block {
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 400px;
+  width: 100%;
+}
+
+.social {
+  height: 886px;
+  background-color: $main-black-color;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  & > h2 {
+    white-space: pre-line;
+    font-family: 'Forum';
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 53px;
+    letter-spacing: 0.03em;
+    color: white;
+    margin: 100px 162px 80px;
+  }
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: max-content;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-start,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-item-next:not(.carousel-item-start) {
+    transform: translateX(25%) !important;
+  }
+
+  .carousel-inner .carousel-item-left.active,
+  .carousel-item-prev:not(.carousel-item-end),
+  .active.carousel-item-start,
+  .carousel-item-prev:not(.carousel-item-end) {
+    transform: translateX(-25%) !important;
+  }
+
+  .carousel-item-next.carousel-item-start, .active.carousel-item-end {
+    transform: translateX(0) !important;
+  }
+
+  .carousel-inner .carousel-item-prev,
+  .carousel-item-prev:not(.carousel-item-end) {
+    transform: translateX(-25%) !important;
+  }
+}
+
+.carousel-indicator-custom {
+  height: 100%;
+  align-items: center;
+  margin: 0;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  z-index: 3;
+}
+
+.social-carousel-helper {
+  position: relative;
+  width: 335px;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border-bottom: 0;
+  border-top: 0;
+  margin: 0 8px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 162px 0;
+
+  & > div:first-child {
+    svg:first-child {
+      margin-right: 20px;
+      cursor: pointer;
+      fill: white;
+
+      &:hover {
+        fill: $gold-on-black;
+        transition: .15s ease !important;
+      }
+
+      &:active {
+        fill: $gold-on-white;
+      }
+    }
+  }
+}
+
+.subscription {
+  height: 640px;
+
+  .form {
+    border-color: $main-black-color;
+  }
+}
+
+.subscription-block {
+  padding: 180px 208px 180px 183px;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: default;
+}
+
+.subscription-block-phone {
+  p:nth-child(2) {
+    font-family: "Futura PT Light";
+    font-weight: 300;
+    font-size: 22px;
+    color: $gray-on-white;
+  }
+}
+
+.subscription-block-text {
+  font-family: "Futura PT Light";
+  font-weight: 600;
+  font-size: 18px;
+  color: $main-black-color;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.subscription-block-form {
+  max-width: 280px;
+  width: 100%;
+
+  svg {
+    stroke: $main-black-color;
+
+    &:hover {
+      transition: .15s ease;
+      stroke: $gold-on-white;
+    }
+  }
+}
+
+footer {
+  background-color: $main-black-color;
+  color: white;
+  padding: 80px 160px 88px;
+  height: 390px;
+  justify-content: space-between;
+  flex-direction: column;
+
+  nav {
+    justify-content: space-between;
+    font-family: "Futura PT Light";
+    font-weight: 450;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  a {
+    cursor: pointer;
+
+    &:hover {
+      transition: .15s ease !important;
+      color: $gold-on-black !important;
+    }
+
+    &:active {
+      color: $gold-on-white !important;
+    }
+  }
+
+  .form {
+    width: 280px;
+
+    input {
+      padding: 0;
+      color: white;
+
+      &::placeholder {
+        color: $gray-on-black;
+      }
+    }
+
+    margin-bottom: 16.65px;
+  }
+}
+
+
+.footer-logo {
+  flex: 1;
+  align-self: center;
+  cursor: pointer;
+}
+
+.footer-phone {
+  p {
+    font-family: 'Futura PT Light';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 21px;
+    cursor: default;
+
+    &:nth-child(2) {
+      font-size: 18px;
+      color: $gray-on-black;
+      font-weight: 300;
+    }
+  }
+
+  a {
+    margin-right: 16px;
+    cursor: pointer;
+  }
+
+  svg {
+    fill: white;
+
+    &:hover {
+      transition: .15s ease;
+      fill: $gold-on-black;
+    }
+
+    &:active {
+      fill: $gold-on-white;
+    }
+  }
+}
+
+.footer-subscription {
+  margin-left: 80px;
+  cursor: default;
+
+  a {
+    &:hover {
+      transition: .15s ease;
+      opacity: 75%;
+    }
+
+    &:active {
+      opacity: 100%;
+    }
+  ;
+  }
+
+  a:nth-child(2) {
+    margin-left: 12px;
+  }
+
+  p {
+    font-family: 'Futura PT Light';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+}
+
+
+.burger-menu {
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+
+  .menu {
+    top: 0;
+    right: 0;
+    margin: 0;
+    z-index: 1;
+    width: 0;
+    height: 1011px;
+    background: #272727;
+    position: absolute;
+    transition: width 1s ease-out;
+
+    &.active {
+      width: 100%;
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        padding: 24px 0;
+        color: #fff;
+        display: block;
+        background: none;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.2s ease-in-out;
+        font-weight: 450;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+
+        &:after {
+          border-bottom: 1.8px solid white;
+          padding: 1px 0;
+          content: " ";
+        }
+
+        &:last-child {
+          margin: 0 47px 0 0;
+        }
+
+        &:hover, &:focus, &:active {
+          border: none;
+          border-bottom: 1.8px solid white;
+        }
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  top: 64px;
+  z-index: 2;
+  right: 162px;
+  width: 30px;
+  height: 1.8px;
+  padding: 9.1px 0;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+
+  span {
+    height: 2px;
+    display: block;
+    overflow: hidden;
+    text-indent: 100%;
+    background: white;
+    border-radius: 2px;
+    white-space: nowrap;
+    transition: background 0.3s ease-in-out;
+  }
+
+  &::before, &::after {
+    left: 0;
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    position: absolute;
+    transform-origin: center center;
+    transition: width 0.2s ease-in-out, background 0.2s ease-in-out, transform 0.2s ease-in-out, top 0.2s ease-in-out, bottom 0.2s ease-in-out, left 0.2s ease-in-out, right 0.2s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: -1.7px;
+  }
+
+  &.menu-open {
+    span {
+      background: rgba(255, 255, 255, 0);
+    }
+
+    &::before {
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      bottom: 8px;
+      transform: rotate(45deg);
+    }
+
+    &::before, &::after {
+      width: 26px;
+      background: #fff;
+    }
+
+    &:hover, &:focus, &:active {
+      span {
+        background: rgba(255, 255, 255, 0);
+      }
+
+      &::before {
+        top: 3px;
+        left: 0;
+        transform: rotate(35deg);
+      }
+
+      &::after {
+        left: 0;
+        bottom: 3px;
+        transform: rotate(-35deg)
+      }
+
+      &::before, &::after {
+        width: 18px;
+      }
+    }
+  }
+
+  &:hover, &:focus, &:active {
+    span {
+      background: rgba(255, 255, 255, 0);
+    }
+
+    &::before {
+      top: 3px;
+      left: 0;
+      transform: rotate(-35deg);
+    }
+
+    &::after {
+      left: 0px;
+      bottom: 3px;
+      transform: rotate(35deg)
+    }
+
+    &::before, &::after {
+      width: 18.6px;
+    }
+  }
+}
+
+.footer-pic {
+  background: url("assets/images/unknown.png") 0 0 no-repeat;
+  background-size: cover;
+  height: 268px;
+  width: 749px;
+  position: relative;
+
+  a {
+    position: absolute;
+    right: 33px;
+    bottom: 30px;
+    font-family: 'Futura PT Light';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+
+    span {
+      margin-left: 23px;
+    }
+  }
+}
+
+.menu-footer-contacts {
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 85px;
+
+  .footer-subscription {
+    margin: 0;
+  }
+
+  .footer-phone {
+    p {
+      margin-bottom: 17px;
+    }
+  }
+}
+
+.tab-content {
+  padding: 70px 0;
+  margin: 0 163px;
+  border-bottom: 1.8px solid #2F2F2F;
+
+}
+
+.tab-content-column {
+  color: white;
+  margin-right: 100px;
+  font-family: "Futura PT Light";
+
+  span {
+    display: block;
+    margin-bottom: 30px;
+    font-family: "Futura PT Medium";
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-bottom: 15px;
+    white-space: pre-line;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+  }
+
+  .show-all-brands {
+    font-family: 'Segoe UI Light';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0;
+    color: $gold-on-black;
+    margin: 0;
+  }
+}
+
+.nav-tabs {
+  padding: 0 163px;
+  height: 75px;
+  border: none;
+  font-family: "Futura PT Light";
+  background-color: #2F2F2F;
+
+  .nav-link.active {
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+
+  .nav-item {
+    &:last-child {
+      li {
+        a {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+

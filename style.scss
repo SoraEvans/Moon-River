@@ -193,14 +193,16 @@ body {
   letter-spacing: 2px;
   color: $main-black-color;
 
-  p:first-child {
+  p {
     cursor: pointer;
   }
 
-  span {
+  .lang-switch-ru {
+    margin-right: 10px;
+  }
+
+  .switch-active {
     color: $gray-C4;
-    margin-left: 10px;
-    cursor: pointer;
 
     &:hover {
       transition: .15s ease;
@@ -339,6 +341,56 @@ body {
   align-items: center;
   cursor: default;
 
+}
+
+.location-map {
+  position: relative;
+
+  .location-mark {
+    position: absolute;
+    cursor: pointer;
+
+    svg {
+
+      stroke: white;
+
+      &:hover {
+        fill: white;
+      }
+
+      &:active {
+        fill: #de922e;
+        stroke: #de922e;
+      }
+    }
+  }
+
+  div {
+    &:first-child {
+      top: 150px;
+      left: 95px;
+    }
+
+    &:nth-child(2) {
+      top: 172px;
+      left: 268px;
+    }
+
+    &:nth-child(3) {
+      top: 232px;
+      left: 383px;
+    }
+
+    &:nth-child(4) {
+      bottom: 183px;
+      right: 207px;
+    }
+
+    &:nth-child(5) {
+      bottom: 132px;
+      left: 276px;
+    }
+  }
 }
 
 .location-block-form {
@@ -1036,13 +1088,13 @@ footer {
 
     &:hover {
       svg {
-        stroke:$gold-on-black;
+        stroke: $gold-on-black;
       }
     }
 
     &:active {
       svg {
-        stroke:$gold-on-white;
+        stroke: $gold-on-white;
       }
     }
 

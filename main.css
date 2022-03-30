@@ -165,19 +165,20 @@ body {
   letter-spacing: 2px;
   color: #272727;
 }
-.language p:first-child {
+.language p {
   cursor: pointer;
 }
-.language span {
+.language .lang-switch-ru {
+  margin-right: 10px;
+}
+.language .switch-active {
   color: #C4C4C4;
-  margin-left: 10px;
-  cursor: pointer;
 }
-.language span:hover {
+.language .switch-active:hover {
   transition: 0.15s ease;
   color: #959595;
 }
-.language span:active {
+.language .switch-active:active {
   color: #272727;
 }
 
@@ -297,6 +298,44 @@ body {
   justify-content: center;
   align-items: center;
   cursor: default;
+}
+
+.location-map {
+  position: relative;
+}
+.location-map .location-mark {
+  position: absolute;
+  cursor: pointer;
+}
+.location-map .location-mark svg {
+  stroke: white;
+}
+.location-map .location-mark svg:hover {
+  fill: white;
+}
+.location-map .location-mark svg:active {
+  fill: #de922e;
+  stroke: #de922e;
+}
+.location-map div:first-child {
+  top: 150px;
+  left: 95px;
+}
+.location-map div:nth-child(2) {
+  top: 172px;
+  left: 268px;
+}
+.location-map div:nth-child(3) {
+  top: 232px;
+  left: 383px;
+}
+.location-map div:nth-child(4) {
+  bottom: 183px;
+  right: 207px;
+}
+.location-map div:nth-child(5) {
+  bottom: 132px;
+  left: 276px;
 }
 
 .location-block-form {

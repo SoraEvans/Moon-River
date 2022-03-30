@@ -18,7 +18,15 @@ $('.carousel .carousel-item').each(function () {
 
 let menu = document.querySelector(".menu"),
     toggle = document.querySelector(".menu-toggle"),
-    content = document.querySelector(".menu-content");
+    content = document.querySelector(".menu-content"),
+    lang_switch_ru = document.querySelector(".lang-switch-ru"),
+    lang_switch_en = document.querySelector(".lang-switch-en"),
+    language = document.querySelector(".language");
+
+function toggleSwitch() {
+    lang_switch_ru.classList.toggle("switch-active");
+    lang_switch_en.classList.toggle("switch-active");
+}
 
 function toggleToggle() {
     toggle.classList.toggle("menu-open");
@@ -44,3 +52,4 @@ function toggleMenu() {
 
 toggle.addEventListener("click", toggleToggle, false);
 toggle.addEventListener("click", toggleMenu, false);
+language.addEventListener("click", toggleSwitch, false);

@@ -145,6 +145,7 @@ body {
 
   aside {
     text-align: right;
+    cursor: default;
 
     p {
       margin: 0 0 9px;
@@ -267,6 +268,15 @@ body {
   position: relative;
   cursor: pointer;
 
+  &:hover {
+    &::before {
+      background-color: #272727;
+      opacity: 0.6;
+      transition: 0.10s ease-in;
+      transition: 0.08s ease-out;
+    }
+  }
+
   &:before {
     width: 100%;
     height: 100%;
@@ -363,6 +373,10 @@ body {
 
     &:hover {
       transition: .15s ease;
+      stroke: $gold-on-black;
+    }
+
+    &:active {
       stroke: $gold-on-white;
     }
   }
@@ -1086,6 +1100,15 @@ footer {
     line-height: 23px;
     letter-spacing: 0.06em;
     cursor: pointer;
+
+    &:hover {
+      transition: .15s ease;
+      color: $gold-on-black;
+    }
+
+    &:active {
+      color: $gold-on-white;
+    }
   }
 
   .show-all-brands {
@@ -1097,6 +1120,15 @@ footer {
     letter-spacing: 0;
     color: $gold-on-black;
     margin: 0;
+
+    &:hover {
+      transition: .15s ease;
+      color: #e5b16c;
+    }
+
+    &:active {
+      color: $gold-on-white;
+    }
   }
 }
 

@@ -52,7 +52,7 @@ body {
   stroke: white;
 }
 .header-icon svg:hover {
-  stroke: #EFC58B;
+  stroke: #efc58b;
   transition: 0.15s ease;
 }
 .header-icon svg:active {
@@ -71,10 +71,10 @@ body {
 }
 
 .cart-icon:hover {
-  stroke: #EFC58B;
+  stroke: #efc58b;
 }
 .cart-icon:hover span {
-  color: #EFC58B;
+  color: #efc58b;
 }
 .cart-icon:active span {
   color: #d3a25f;
@@ -121,6 +121,7 @@ body {
 }
 .side-content aside {
   text-align: right;
+  cursor: default;
 }
 .side-content aside p {
   margin: 0 0 9px;
@@ -148,7 +149,7 @@ body {
 }
 
 .cost {
-  color: #EFC58B;
+  color: #efc58b;
   font-family: "Segoe UI Light";
   font-weight: 300;
   font-style: italic;
@@ -206,7 +207,7 @@ body {
   color: #d3a25f;
 }
 .collection-link:active {
-  color: #EFC58B;
+  color: #efc58b;
 }
 
 .for-man {
@@ -232,6 +233,12 @@ body {
   color: white;
   position: relative;
   cursor: pointer;
+}
+.category-block:hover::before {
+  background-color: #272727;
+  opacity: 0.6;
+  transition: 0.1s ease-in;
+  transition: 0.08s ease-out;
 }
 .category-block:before {
   width: 100%;
@@ -322,6 +329,9 @@ body {
 }
 .form svg:hover {
   transition: 0.15s ease;
+  stroke: #efc58b;
+}
+.form svg:active {
   stroke: #d3a25f;
 }
 .form input {
@@ -428,7 +438,7 @@ body {
   font-family: "Segoe UI Light";
   font-style: italic;
   font-size: 18px;
-  color: #EFC58B;
+  color: #efc58b;
   letter-spacing: 0.03em;
 }
 .product-big figcaption p:nth-child(2) {
@@ -554,7 +564,7 @@ body {
   fill: white;
 }
 .social-icons > div:first-child svg:first-child:hover {
-  fill: #EFC58B;
+  fill: #efc58b;
   transition: 0.15s ease !important;
 }
 .social-icons > div:first-child svg:first-child:active {
@@ -625,7 +635,7 @@ footer a {
 }
 footer a:hover {
   transition: 0.15s ease !important;
-  color: #EFC58B !important;
+  color: #efc58b !important;
 }
 footer a:active {
   color: #d3a25f !important;
@@ -672,7 +682,7 @@ footer .form input::placeholder {
 }
 .footer-phone svg:hover {
   transition: 0.15s ease;
-  fill: #EFC58B;
+  fill: #efc58b;
 }
 .footer-phone svg:active {
   fill: #d3a25f;
@@ -776,7 +786,7 @@ footer .form input::placeholder {
   position: absolute;
 }
 .menu-toggle:hover::before, .menu-toggle:hover::after {
-  background: #EFC58B;
+  background: #efc58b;
 }
 .menu-toggle:active::before, .menu-toggle:active::after {
   background: #d3a25f;
@@ -809,7 +819,7 @@ footer .form input::placeholder {
   bottom: -1.7px;
 }
 .menu-toggle.menu-open:hover::before, .menu-toggle.menu-open:hover::after {
-  background: #EFC58B;
+  background: #efc58b;
 }
 .menu-toggle.menu-open:active::before, .menu-toggle.menu-open:active::after {
   background: #d3a25f;
@@ -880,7 +890,7 @@ footer .form input::placeholder {
   letter-spacing: 0.06em;
 }
 .footer-pic a:hover svg {
-  stroke: #EFC58B;
+  stroke: #efc58b;
 }
 .footer-pic a:active svg {
   stroke: #d3a25f;
@@ -932,6 +942,13 @@ footer .form input::placeholder {
   letter-spacing: 0.06em;
   cursor: pointer;
 }
+.tab-content-column p:hover {
+  transition: 0.15s ease;
+  color: #efc58b;
+}
+.tab-content-column p:active {
+  color: #d3a25f;
+}
 .tab-content-column .show-all-brands {
   font-family: "Segoe UI Light";
   font-style: italic;
@@ -939,8 +956,15 @@ footer .form input::placeholder {
   font-size: 16px;
   line-height: 21px;
   letter-spacing: 0;
-  color: #EFC58B;
+  color: #efc58b;
   margin: 0;
+}
+.tab-content-column .show-all-brands:hover {
+  transition: 0.15s ease;
+  color: #e5b16c;
+}
+.tab-content-column .show-all-brands:active {
+  color: #d3a25f;
 }
 
 .nav-tabs {
